@@ -5,12 +5,12 @@ length = len(cards)
 mid = int(length / 2)
 
 for i in range(0, shuffle):
-    lst = []
+    my_list = []
     for p in range(0, mid):
-        list.append(cards[p])
-        list.append(cards[mid])
+        my_list.append(cards[p])
+        my_list.append(cards[mid])
         mid += 1
-    cards = list
+    cards = my_list
     mid = int(length / 2)
 
-print(list)
+print(cards)
