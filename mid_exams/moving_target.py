@@ -1,32 +1,26 @@
-targets = [int(x) for x in input().split()]
+targets = list(map(int, input().split()))
 
 while True:
+    length = len(targets)
     command = input().split()
     if command[0] == 'End':
         break
+    index_shot = int(command[1])
+    power_shot = int(command[2])
     if command[0] == 'Shoot':
-        # index if it exists or not
-        index_shot = command[1]
-        if command[1] <= len(targets):
-            targets[index_shot] -= command[2]
-            if targets[index_shot] == 0 or command[2] > targets[index_shot]: # if targets[index_shot] <= 0
-                targets.remove(0)
-        else:
-            pass
+        if index_shot in range(length):
+            if targets[index_shot] > power_shot:
+                targets[index_shot] -= power_shot
+            else:
+                targets.pop(index_shot)
     elif command[0] == 'Add':
-        # index if it exists or not
-        index_shot = command[1]
-        if command[1] <= len(targets):
-            targets.insert(index_shot, )
-            # o	If not, print: "Invalid placement!"
+        if index_shot in range(length):
+            targets.insert(index_shot, power_shot)
         else:
             print(f"Invalid placement!")
     elif command[0] == 'Strike':
-        index_shot = command[1]
-        # Remove the target at the given index and the ones before and after it depending on the radius.
-        # If any of the indices in the range is invalid, print: "Strike missed!" and skip this command.
-        if command[1] <= len(targets):
-            targets.pop(index_shot)
+        if index_shot >= power_shot and (index_shot + power_shot) < len(targets):
+            del targets[index_shot - power_shot:index_shot + power_shot + 1]
         else:
-            pass
-    
+            print(f"Strike missed!")
+print('|'.join(map(str, targets)))
