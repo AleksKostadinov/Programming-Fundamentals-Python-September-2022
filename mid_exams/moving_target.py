@@ -19,8 +19,8 @@ while True:
         else:
             print(f"Invalid placement!")
     elif command[0] == 'Strike':
-        if index_shot >= power_shot and (index_shot + power_shot) < len(targets):
+        if index_shot >= power_shot and (index_shot + power_shot) < length:
             del targets[index_shot - power_shot:index_shot + power_shot + 1]
         else:
             print(f"Strike missed!")
-print('|'.join(map(str, targets)))
+print(*targets, sep="|")
