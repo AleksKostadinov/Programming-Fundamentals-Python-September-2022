@@ -11,7 +11,7 @@ def drop_func():
 def combine_func():
     if old_item in collecting_items:
         index_old = collecting_items.index(old_item)
-        collecting_items.insert(index_old+1, new_item)
+        collecting_items.insert(index_old + 1, new_item)
 
 
 def renew_func():
