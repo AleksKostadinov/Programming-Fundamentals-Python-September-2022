@@ -33,4 +33,3 @@ article.change_author(
     "B. T."
 )
 print(article)
-
