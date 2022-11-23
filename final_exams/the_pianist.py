@@ -33,7 +33,7 @@ while command != 'Stop':
         else:
             for current_piece in pieces_dict:
                 if current_piece == piece:
-                    for (compositor) in pieces_dict[current_piece]:
+                    for compositor in pieces_dict[current_piece]:
                         pieces_dict[current_piece][compositor] = new_key
                         break
             print(f"Changed the key of {piece} to {new_key}!")
