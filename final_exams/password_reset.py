@@ -12,7 +12,7 @@ while command != 'Done':
     elif action == 'Cut':
         start_index = int(command_list[1])
         end_index = int(command_list[2]) + start_index
-        if 0 <= start_index <= end_index < len(text):  # ???
+        if 0 <= start_index <= end_index < len(text):
             text = text[:start_index] + text[end_index:]
             print(*text, sep='')
     elif action == 'Substitute':
